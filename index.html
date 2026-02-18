@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1>QR Studio</h1>
+        <input type="text" id="textInput" placeholder="Enter text or link"> 
+        <input type="file" id="fileInput" accept="image/*">
+        <button id="generateBtn" class="primary">Generate QR</button>
+        <div id="loader" class="loader hidden"></div>
+        <p id="status" class="status"></p>
+        <div id="qrContainer"></div>
+        <button id="downloadBtn" class="hidden">Download QR</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
