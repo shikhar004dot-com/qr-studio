@@ -78,12 +78,19 @@ if(!data.secure_url){
 
     return data.secure_url;
 }
-
-function downloadQR(){
-    const img=qrContainer.querySelector("img");
-    if(!img) return;
-    const link=document.createElement("a");
-    link.href=img.src;
-    link.download="qr-code.png";
+function downloadQR() {
+    const canvas = qrContainer.querySelector("canvas");
+    if (!canvas) {
+        alert("Generate QR first!");
+        return;
+    }
+    const url = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "qr-code.png";
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
 }
+
+
